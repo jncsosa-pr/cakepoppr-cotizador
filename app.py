@@ -9,23 +9,52 @@ st.set_page_config(
     layout="centered"
 )
 
-# Estilos personalizados basados en la identidad visual de CakePopPR (Marrón y Rosa)
+# Estilos personalizados basados en la identidad visual de CakePopPR
 st.markdown("""
     <style>
-    .main-title { color: #4A2E2B; font-size: 34px; font-weight: bold; text-align: center; margin-bottom: 2px; }
-    .subtitle { color: #D4A59A; font-size: 16px; text-align: center; font-style: italic; margin-bottom: 25px; }
-    .stCheckbox label { font-weight: bold; color: #4A2E2B; }
-    .stButton>button { background-color: #4A2E2B; color: white; border-radius: 20px; border: none; width: 100%; font-weight: bold; }
-    .stButton>button:hover { background-color: #D4A59A; color: #4A2E2B; }
-    div[data-testid="stExpander"] { background-color: #FDFBF7; border-radius: 8px; border-left: 4px solid #D4A59A; margin-bottom: 10px; }
+    .subtitle { 
+        color: #D4A59A; 
+        font-size: 16px; 
+        text-align: center; 
+        font-style: italic; 
+        margin-bottom: 25px; 
+    }
+
+    .stCheckbox label { 
+        font-weight: bold; 
+        color: #4A2E2B; 
+    }
+
+    .stButton>button { 
+        background-color: #4A2E2B; 
+        color: white; 
+        border-radius: 20px; 
+        border: none; 
+        width: 100%; 
+        font-weight: bold; 
+    }
+
+    .stButton>button:hover { 
+        background-color: #D4A59A; 
+        color: #4A2E2B; 
+    }
+
+    div[data-testid="stExpander"] { 
+        background-color: #FDFBF7; 
+        border-radius: 8px; 
+        border-left: 4px solid #D4A59A; 
+        margin-bottom: 10px; 
+    }
     </style>
 """, unsafe_allow_html=True)
 
+# Logo oficial de CakePopPR
 col_logo1, col_logo2, col_logo3 = st.columns([1, 2, 1])
 
 with col_logo2:
     st.image("assets/logo_cakepoppr.png", width=280)
 
+# Subtítulo del sistema
 st.markdown(
     '<div class="subtitle">Sistema de Cotizaciones de Cookies Personalizadas</div>',
     unsafe_allow_html=True
