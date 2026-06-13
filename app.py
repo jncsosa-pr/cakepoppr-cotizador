@@ -12,40 +12,17 @@ st.set_page_config(
 st.markdown("""
     <style>
     section.main > div.block-container {
-        padding-top: 1.5rem;
+        padding-top: 2rem;
         max-width: 900px;
     }
 
     .subtitle { 
         color: #D4A59A; 
-        font-size: 17px; 
+        font-size: 16px; 
         text-align: center; 
         font-style: italic; 
-import streamlit as st
-from datetime import datetime, timedelta
-
-# Configuración de página con estética premium y limpia
-st.set_page_config(
-    page_title="CakePopPR - Cotizaciones",
-    page_icon="assets/logo_cakepoppr.png",
-    layout="centered"
-)
-
-# Estilos personalizados basados en la identidad visual de CakePopPR
-st.markdown("""
-    <style>
-    section.main > div.block-container {
-        padding-top: 1.5rem;
-        max-width: 900px;
-    }
-
-    .subtitle { 
-        color: #D4A59A; 
-        font-size: 17px; 
-        text-align: center; 
-        font-style: italic; 
-        margin-top: -45px;
-        margin-bottom: 32px; 
+        margin-top: 8px;
+        margin-bottom: 28px; 
     }
 
     .stCheckbox label { 
@@ -76,13 +53,13 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# Logo oficial de CakePopPR más grande y centrado
-col_logo1, col_logo2, col_logo3 = st.columns([1, 3, 1])
+# Logo oficial de CakePopPR
+col_logo1, col_logo2, col_logo3 = st.columns([1, 2, 1])
 
 with col_logo2:
-    st.image("assets/logo_cakepoppr.png", width=420)
+    st.image("assets/logo_cakepoppr.png", width=280)
 
-# Subtítulo del sistema más cerca del logo
+# Subtítulo del sistema
 st.markdown(
     '<div class="subtitle">Sistema de Cotizaciones de Cookies Personalizadas</div>',
     unsafe_allow_html=True
@@ -93,92 +70,36 @@ st.markdown(
 def cargar_precios_oficiales():
     return {
         # 2" Royal Icing
-        '2"|Royal Icing|12': 21.00,
-        '2"|Royal Icing|24': 42.00,
-        '2"|Royal Icing|36': 63.00,
-        '2"|Royal Icing|48': 84.00,
-        '2"|Royal Icing|100': 175.00,
-        '2"|Royal Icing|200': 350.00,
-        '2"|Royal Icing|300': 525.00,
-        '2"|Royal Icing|500': 875.00,
-        '2"|Royal Icing|700': 1225.00,
+        '2"|Royal Icing|12': 21.00, '2"|Royal Icing|24': 42.00, '2"|Royal Icing|36': 63.00, '2"|Royal Icing|48': 84.00,
+        '2"|Royal Icing|100': 175.00, '2"|Royal Icing|200': 350.00, '2"|Royal Icing|300': 525.00, '2"|Royal Icing|500': 875.00, '2"|Royal Icing|700': 1225.00,
 
         # 2" Fondant
-        '2"|Fondant|12': 26.04,
-        '2"|Fondant|24': 52.08,
-        '2"|Fondant|36': 78.12,
-        '2"|Fondant|48': 104.16,
-        '2"|Fondant|100': 217.00,
-        '2"|Fondant|200': 434.00,
-        '2"|Fondant|300': 651.00,
-        '2"|Fondant|500': 1085.00,
-        '2"|Fondant|700': 1519.00,
+        '2"|Fondant|12': 26.04, '2"|Fondant|24': 52.08, '2"|Fondant|36': 78.12, '2"|Fondant|48': 104.16,
+        '2"|Fondant|100': 217.00, '2"|Fondant|200': 434.00, '2"|Fondant|300': 651.00, '2"|Fondant|500': 1085.00, '2"|Fondant|700': 1519.00,
 
         # 2.5" Royal Icing
-        '2.5"|Royal Icing|12': 31.08,
-        '2.5"|Royal Icing|24': 62.16,
-        '2.5"|Royal Icing|36': 93.24,
-        '2.5"|Royal Icing|48': 124.32,
-        '2.5"|Royal Icing|100': 259.00,
-        '2.5"|Royal Icing|200': 518.00,
-        '2.5"|Royal Icing|300': 777.00,
-        '2.5"|Royal Icing|500': 1295.00,
-        '2.5"|Royal Icing|700': 1813.00,
+        '2.5"|Royal Icing|12': 31.08, '2.5"|Royal Icing|24': 62.16, '2.5"|Royal Icing|36': 93.24, '2.5"|Royal Icing|48': 124.32,
+        '2.5"|Royal Icing|100': 259.00, '2.5"|Royal Icing|200': 518.00, '2.5"|Royal Icing|300': 777.00, '2.5"|Royal Icing|500': 1295.00, '2.5"|Royal Icing|700': 1813.00,
 
         # 2.5" Fondant
-        '2.5"|Fondant|12': 35.64,
-        '2.5"|Fondant|24': 71.28,
-        '2.5"|Fondant|36': 106.92,
-        '2.5"|Fondant|48': 142.56,
-        '2.5"|Fondant|100': 297.00,
-        '2.5"|Fondant|200': 594.00,
-        '2.5"|Fondant|300': 891.00,
-        '2.5"|Fondant|500': 1485.00,
-        '2.5"|Fondant|700': 2079.00,
+        '2.5"|Fondant|12': 35.64, '2.5"|Fondant|24': 71.28, '2.5"|Fondant|36': 106.92, '2.5"|Fondant|48': 142.56,
+        '2.5"|Fondant|100': 297.00, '2.5"|Fondant|200': 594.00, '2.5"|Fondant|300': 891.00, '2.5"|Fondant|500': 1485.00, '2.5"|Fondant|700': 2079.00,
 
         # 3" Royal Icing
-        '3"|Royal Icing|12': 41.40,
-        '3"|Royal Icing|24': 82.80,
-        '3"|Royal Icing|36': 124.20,
-        '3"|Royal Icing|48': 165.60,
-        '3"|Royal Icing|100': 345.00,
-        '3"|Royal Icing|200': 690.00,
-        '3"|Royal Icing|300': 1035.00,
-        '3"|Royal Icing|500': 1725.00,
-        '3"|Royal Icing|700': 2415.00,
+        '3"|Royal Icing|12': 41.40, '3"|Royal Icing|24': 82.80, '3"|Royal Icing|36': 124.20, '3"|Royal Icing|48': 165.60,
+        '3"|Royal Icing|100': 345.00, '3"|Royal Icing|200': 690.00, '3"|Royal Icing|300': 1035.00, '3"|Royal Icing|500': 1725.00, '3"|Royal Icing|700': 2415.00,
 
         # 3" Fondant
-        '3"|Fondant|12': 48.00,
-        '3"|Fondant|24': 96.00,
-        '3"|Fondant|36': 144.00,
-        '3"|Fondant|48': 192.00,
-        '3"|Fondant|100': 400.00,
-        '3"|Fondant|200': 800.00,
-        '3"|Fondant|300': 1200.00,
-        '3"|Fondant|500': 2000.00,
-        '3"|Fondant|700': 2800.00,
+        '3"|Fondant|12': 48.00, '3"|Fondant|24': 96.00, '3"|Fondant|36': 144.00, '3"|Fondant|48': 192.00,
+        '3"|Fondant|100': 400.00, '3"|Fondant|200': 800.00, '3"|Fondant|300': 1200.00, '3"|Fondant|500': 2000.00, '3"|Fondant|700': 2800.00,
 
         # 4" Royal Icing
-        '4"|Royal Icing|12': 65.52,
-        '4"|Royal Icing|24': 131.04,
-        '4"|Royal Icing|36': 196.56,
-        '4"|Royal Icing|48': 262.08,
-        '4"|Royal Icing|100': 546.00,
-        '4"|Royal Icing|200': 1092.00,
-        '4"|Royal Icing|300': 1638.00,
-        '4"|Royal Icing|500': 2730.00,
-        '4"|Royal Icing|700': 3822.00,
+        '4"|Royal Icing|12': 65.52, '4"|Royal Icing|24': 131.04, '4"|Royal Icing|36': 196.56, '4"|Royal Icing|48': 262.08,
+        '4"|Royal Icing|100': 546.00, '4"|Royal Icing|200': 1092.00, '4"|Royal Icing|300': 1638.00, '4"|Royal Icing|500': 2730.00, '4"|Royal Icing|700': 3822.00,
 
         # 4" Fondant
-        '4"|Fondant|12': 72.00,
-        '4"|Fondant|24': 144.00,
-        '4"|Fondant|36': 216.00,
-        '4"|Fondant|48': 288.00,
-        '4"|Fondant|100': 600.00,
-        '4"|Fondant|200': 1200.00,
-        '4"|Fondant|300': 1800.00,
-        '4"|Fondant|500': 3000.00,
-        '4"|Fondant|700': 4200.00
+        '4"|Fondant|12': 72.00, '4"|Fondant|24': 144.00, '4"|Fondant|36': 216.00, '4"|Fondant|48': 288.00,
+        '4"|Fondant|100': 600.00, '4"|Fondant|200': 1200.00, '4"|Fondant|300': 1800.00, '4"|Fondant|500': 3000.00, '4"|Fondant|700': 4200.00
     }
 
 precios_dict = cargar_precios_oficiales()
@@ -280,7 +201,6 @@ if opciones_validas:
     )
 
     c_card1, c_card2, c_card3 = st.columns(3)
-
     c_card1.metric("Subtotal", f"${subtotal_total:,.2f}")
     c_card2.metric("IVU (11.5%)", f"${ivu_total:,.2f}")
     c_card3.metric("Total General", f"${gran_total:,.2f}")
@@ -351,4 +271,3 @@ Gracias por confiar en CakePopPR 💙
 
 else:
     st.info("Selecciona e incluye al menos una opción en la parte superior para calcular la cotización.")
-)
