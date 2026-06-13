@@ -5,7 +5,7 @@ from datetime import datetime, timedelta
 # Configuración de página con estética premium y limpia
 st.set_page_config(
     page_title="CakePopPR - Cotizaciones",
-    page_icon="🍪",
+    page_icon="assets/logo_cakepoppr.png",
     layout="centered"
 )
 
@@ -20,6 +20,16 @@ st.markdown("""
     div[data-testid="stExpander"] { background-color: #FDFBF7; border-radius: 8px; border-left: 4px solid #D4A59A; margin-bottom: 10px; }
     </style>
 """, unsafe_allow_html=True)
+
+col_logo1, col_logo2, col_logo3 = st.columns([1, 2, 1])
+
+with col_logo2:
+    st.image("assets/logo_cakepoppr.png", width=280)
+
+st.markdown(
+    '<div class="subtitle">Sistema de Cotizaciones de Cookies Personalizadas</div>',
+    unsafe_allow_html=True
+)
 
 st.markdown('<div class="main-title">CakePopPR 🍪</div>', unsafe_allow_html=True)
 st.markdown('<div class="subtitle">Sistema de Cotizaciones de Cookies Personalizadas</div>', unsafe_allow_html=True)
